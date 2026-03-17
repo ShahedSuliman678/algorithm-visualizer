@@ -21,3 +21,14 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+.cell.start {
+  background: #1D9E75;
+}
+
+.cell.end {
+  background: #D85A30;
+}
+
+.cell.wall {
+  background: #333;
+}
