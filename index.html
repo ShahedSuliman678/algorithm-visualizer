@@ -8,10 +8,42 @@
 </head>
 <body>
 
-  <h1>Algorithm Visualizer</h1>
+  <div class="sidebar">
+    <h1>Algorithm Visualizer ✨</h1>
+    <p>Click to set start, then end, then draw walls.</p>
 
-  <div id="grid"></div>
+    <hr class="divider">
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#1D9E75"></div> Start
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ff6b9d"></div> End
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#c9184a"></div> Wall
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ffd6e7"></div> Visited
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ff6b9d; box-shadow: 0 0 6px rgba(255,107,157,0.8)"></div> Path
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <button onclick="runBFS(cells, startCell, endCell)">▶ Run BFS</button>
+    <button class="reset" onclick="location.reload()">↺ Reset</button>
+  </div>
+
+  <div class="main">
+    <div id="grid"></div>
+  </div>
 
   <script src="grid.js"></script>
+  <script src="bfs.js"></script>
+
 </body>
 </html>

@@ -2,6 +2,7 @@ const ROWS = 15;
 const COLS = 20;
 const gridEl = document.getElementById('grid');
 
+
 let startSet = false;
 let endSet = false;
 let cells = [];
