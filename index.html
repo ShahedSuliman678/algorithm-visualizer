@@ -33,10 +33,12 @@
     </div>
 
     <hr class="divider">
-
+    <input type="range" min="10" max="200" value="50" id="speedSlider">
     <button onclick="runBFS(cells, startCell, endCell)">▶ Run BFS</button>
+    <button onclick="runDFS(cells, startCell, endCell)">▶ Run DFS</button>
     <button class="reset" onclick="location.reload()">↺ Reset</button>
   </div>
+
 
   <div class="main">
     <div id="grid"></div>
@@ -44,6 +46,6 @@
 
   <script src="grid.js"></script>
   <script src="bfs.js"></script>
-
+  <script src="dfs.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-async function runBFS() {
-  const queue = [];
+async function runDFS() {
+  const stack = [];
   const visited = [];
   const prev = [];
   const directions = [[0,1],[1,0],[0,-1],[-1,0]];
@@ -13,11 +13,12 @@ async function runBFS() {
     }
   }
 
-  queue.push(startCell);
+  stack.push(startCell);
   visited[startCell.r][startCell.c] = true;
 
-  while (queue.length > 0) {
-    const current = queue.shift();
+  while (stack.length > 0) {
+    const current = stack.pop();
+    visited[current.r][current.c] = true; // ← moved here!
 
     if (current.r === endCell.r && current.c === endCell.c) {
       let step = prev[current.r][current.c];
@@ -38,9 +39,8 @@ async function runBFS() {
           !visited[nr][nc] &&
           !cells[nr][nc].classList.contains('wall')) {
 
-        visited[nr][nc] = true;
         prev[nr][nc] = current;
-        queue.push(cells[nr][nc]);
+        stack.push(cells[nr][nc]); // ← visited removed from here
 
         if (!cells[nr][nc].classList.contains('end')) {
           cells[nr][nc].classList.add('visited');
