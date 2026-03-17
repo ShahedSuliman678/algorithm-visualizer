@@ -21,7 +21,3 @@ That's it — no installation needed!
 - Control animation speed
 - See the shortest path highlighted
 
-## 🗺️ Roadmap
-- [ ] Add Dijkstra's algorithm
-- [ ] Add sorting visualizer
-- [ ] Add maze generator
