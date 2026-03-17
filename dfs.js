@@ -21,12 +21,16 @@ async function runDFS() {
     visited[current.r][current.c] = true; // ← moved here!
 
     if (current.r === endCell.r && current.c === endCell.c) {
+      let steps = 0;
       let step = prev[current.r][current.c];
       while (step && !cells[step.r][step.c].classList.contains('start')) {
         cells[step.r][step.c].classList.add('path');
-        await delay(50);
+        const speed = 210 - document.getElementById('speedSlider').value;
+        await delay(speed);
         step = prev[step.r][step.c];
+        steps++;
       }
+      document.getElementById('stepCounter').textContent = 'Path length: ' + steps + ' steps';
       return;
     }
 

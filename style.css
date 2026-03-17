@@ -133,7 +133,7 @@ button.reset:hover {
 }
 
 .cell.start   { background: #1D9E75; border-color: #1D9E75; }
-.cell.end     { background: #ff6b9d; border-color: #ff6b9d; }
+.cell.end {  background: #7209b7;  border-color: #7209b7;}
 .cell.wall    { background: #c9184a; border-color: #c9184a; }
 .cell.visited { background: #ffd6e7; border-color: #ffb3c6; }
 .cell.path    { background: #ff6b9d; border-color: #ff6b9d; box-shadow: 0 0 8px rgba(255,107,157,0.6); }

@@ -19,7 +19,7 @@
         <div class="legend-dot" style="background:#1D9E75"></div> Start
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="background:#ff6b9d"></div> End
+        <div class="legend-dot" style="background:#7209b7"></div> End
       </div>
       <div class="legend-item">
         <div class="legend-dot" style="background:#c9184a"></div> Wall
@@ -31,9 +31,12 @@
         <div class="legend-dot" style="background:#ff6b9d; box-shadow: 0 0 6px rgba(255,107,157,0.8)"></div> Path
       </div>
     </div>
-
+    <div id="stepCounter" style="color: white; font-size: 13px; margin-top: 8px;"> 
+    Path length: -
+  </div>
     <hr class="divider">
     <input type="range" min="10" max="200" value="50" id="speedSlider">
+    <button class="reset" onclick="clearPath()">✕ Clear Path</button>
     <button onclick="runBFS(cells, startCell, endCell)">▶ Run BFS</button>
     <button onclick="runDFS(cells, startCell, endCell)">▶ Run DFS</button>
     <button class="reset" onclick="location.reload()">↺ Reset</button>

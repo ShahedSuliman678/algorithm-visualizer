@@ -6,7 +6,6 @@ let startCell = null;
 let endCell = null;
 let cells = [];
 
-// Build the grid
 for (let r = 0; r < ROWS; r++) {
   cells[r] = [];
   for (let c = 0; c < COLS; c++) {
@@ -14,9 +13,7 @@ for (let r = 0; r < ROWS; r++) {
     cell.classList.add('cell');
     cell.r = r;
     cell.c = c;
-
     cell.addEventListener('click', () => handleClick(cell, r, c));
-
     gridEl.appendChild(cell);
     cells[r][c] = cell;
   }
@@ -38,4 +35,16 @@ function handleClick(cell, r, c) {
       cell.classList.toggle('wall');
     }
   }
+} // ← this was missing!
+
+function clearPath() {
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      if (cells[r][c].classList.contains('visited') || 
+          cells[r][c].classList.contains('path')) {
+        cells[r][c].classList.remove('visited', 'path');
+      }
+    }
+  }
+  document.getElementById('stepCounter').textContent = 'Path length: -';
 }
